@@ -27,9 +27,9 @@ blogs={
 async def read_media():
     return [{"mediaType": "Video"}, {"mediaType": "blog"}]
 
-@router.get("/{mediaType}", tags=["media"])
-async def read_user(mediaType: str):
-    return {"username": mediaType}
+# @router.get("/{mediaType}", tags=["media"])
+# async def read_user(mediaType: str):
+#     return {"username": mediaType}
 
 @router.get("/vlogs", tags=["media", "vlog"])
 async def list_vlog():
