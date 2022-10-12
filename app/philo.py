@@ -22,7 +22,7 @@ quotes = {
             "qt_9": {"qt": "Wealth consists not in having great possessions, but in having few wants.―Epictetus"},
             "qt_10": {"qt": "If it is not right, do not do it; if it is not true, do not say it.", "qtr":" Marcus Aurelius"},
             "qt_11": {"qt": "Begin at once to live, and count each separate day as a separate life.", "qtr":"Seneca"},
-            "qt_12": {"qt": "Stop drifting…Sprint to the finish. Write off your hopes, and if your well-being matters to you, be your own savior while you can.", "qtr":"Marcus Aurelius"},
+            "qt_12": {"qt": "Stop drifting…Sprint to the finish. Write off your hopes, and if your well-being matters to you, be your own saviour while you can.", "qtr":"Marcus Aurelius"},
             "qt_13": {"qt": "Whatever can happen at any time can happen today.", "qtr":"Seneca"},
             "qt_14": {"qt": "They lose the day in expectation of the night, and the night in fear of the dawn.", "qtr":"Seneca"},
             "qt_15": {"qt": "Let us prepare our minds as if we’d come to the very end of life. Let us postpone nothing. Let us balance life’s books each day… The one who puts the finishing touches on their life each day is never short of time.", "qtr":"Marcus Aurelius"},
@@ -33,7 +33,6 @@ quotes = {
             "qt_20": {"qt": "Luck is what happens when preparation meets opportunity.", "qtr":"Seneca"}
         }
 
-print (f"Quote : {quotes['qt_14']}")
 
 
 @router.get("/", tags=["philosophy","stoic"])

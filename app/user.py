@@ -22,7 +22,7 @@ async def read_users():
 
 @router.get("/me", tags=["users"])
 async def read_user_me():
-    return {"username": "fakecurrentuser"}
+    return users["u0001"]
 
 
 @router.get("/ref/{ref}", tags=["users"])
