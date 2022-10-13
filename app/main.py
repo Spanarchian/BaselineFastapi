@@ -2,13 +2,12 @@ from urllib import response
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Optional, List
-from .event import router as eventrouter
-from .media import router as mediarouter
-from .user import router as userrouter
-from .philo import router as philorouter
+from .endpoints.event import router as eventrouter
+from .endpoints.media import router as mediarouter
+from .endpoints.user import router as userrouter
+from .endpoints.philo import router as philorouter
 
 Philo_list = []
-  
 
 class Philosophers(BaseModel):
     """Represents a philosopher."""
