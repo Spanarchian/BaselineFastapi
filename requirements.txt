@@ -5,3 +5,4 @@ pytest
 py2neo
 neo4j
 python-dotenv
+requests
