@@ -7,6 +7,8 @@ from .endpoints.media import router as mediarouter
 from .endpoints.user import router as userrouter
 from .endpoints.philo import router as philorouter
 
+import neo4j
+
 Philo_list = []
 
 class Philosophers(BaseModel):
