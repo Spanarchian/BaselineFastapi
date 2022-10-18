@@ -2,10 +2,12 @@ from neo4j import GraphDatabase
 import logging
 from neo4j.exceptions import ServiceUnavailable
 
+from db import neo4j_driver
+
 class App:
 
-    def __init__(self, uri, user, password):
-        self.driver = GraphDatabase.driver(uri, auth=(user, password))
+    def __init__(self):
+        self.driver = neo4j_driver
 
     def close(self):
         # Don't forget to close the driver connection when you are finished with it
@@ -13,7 +15,7 @@ class App:
 
     def create_friendship(self, person1_name, person2_name):
         print(f"Starting: create_friendship ")
-        with self.driver.session(database="neo4j") as session:
+        with neo4j_driver.session(database="neo4j") as session:
             # Write transactions allow the driver to handle retries and transient errors
             result = session.write_transaction(self._create_and_return_friendship, person1_name, person2_name)
             for row in result:
@@ -41,7 +43,7 @@ class App:
             raise
 
     def find_person(self, person_name):
-        with self.driver.session(database="neo4j") as session:
+        with neo4j_driver.session(database="neo4j") as session:
             result = session.read_transaction(self._find_and_return_person, person_name)
             for row in result:
                 print("Found person: {row}".format(row=row))
@@ -62,7 +64,7 @@ if __name__ == "__main__":
     uri = "neo4j+ssc://4d075a24.databases.neo4j.io"
     user = "neo4j"
     password = "EqLK8dlRsBUugN6cMeLd3hZ3lrFbQZ-JWlUPONJ49Rk"
-    app = App(uri, user, password)
+    app = App()
     app.create_friendship("Alice", "David")
     app.find_person("Alice")
     app.close()

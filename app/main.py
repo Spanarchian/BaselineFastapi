@@ -2,9 +2,11 @@ from urllib import response
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Optional, List
+
 from .endpoints.event import router as eventrouter
 from .endpoints.media import router as mediarouter
-from .endpoints.user import router as userrouter
+from .endpoints.user import router as authrouter
+from .endpoints.auth import router as userrouter
 from .endpoints.philo import router as philorouter
 
 import neo4j
@@ -21,6 +23,7 @@ app = FastAPI()
 app.include_router(eventrouter)
 app.include_router(mediarouter)
 app.include_router(userrouter)
+app.include_router(authrouter)
 app.include_router(philorouter)
 
 Philo_list = [{"name":"Su, Lao", "nationality":"Chinese", "time":"6th BC"},{"name":"Epititus","nationality": "Greek","time": "3rd BC"},{"name":"Watts, Alan", "nationality":"English","time": '20th'}]
@@ -29,7 +32,6 @@ Philo_list = [{"name":"Su, Lao", "nationality":"Chinese", "time":"6th BC"},{"nam
 @app.get("/")
 async def root():
     return {"code":418, "message": "I am not the teapot your looking for!"}
-
 
 
 @app.get("/stoics")
