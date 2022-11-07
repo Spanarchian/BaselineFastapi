@@ -39,5 +39,3 @@ quotes = {
 def stoic_rand():
     ref = random.randint(1,20)
     return  quotes[f'qt_{ref}']
-
-print (f"Quote : {stoic_rand()}")
