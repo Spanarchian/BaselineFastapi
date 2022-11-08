@@ -1,0 +1,18 @@
+[
+    {
+        "ref": "blg_00001",
+        "title": "the first title",
+        "desc": "A discription for the first book",
+        "creator":"Author One",
+        "modility":"Healing",
+        "status":"open"
+    },
+    {
+        "ref": "blg_00002",
+        "title": "the second title",
+        "desc": "A discription for the second book",
+        "creator":"Author Two",
+        "modility":"Meditation",
+        "status":"subscription"
+    }
+]

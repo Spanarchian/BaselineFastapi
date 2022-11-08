@@ -23,7 +23,7 @@ blogs={
         "colin":{'ref' : '6F2B2369-6392-4B31-A238-EA65EDE57C65', 'title' : 'colin', 'creator' : 'colin.moore.hill@gmail.com', 'type' : 'subscriber', 'desc' : 'Vancouver', 'duration' : '1hr', 'level (All / Sub)' : 'all', 'till' : '-'}
     }
 
-@router.get("/", tags=["media"])
+@router.get("/", status_code=201, tags=["media"])
 async def read_media():
     return [{"mediaType": "Video"}, {"mediaType": "blog"}]
 
@@ -31,10 +31,10 @@ async def read_media():
 # async def read_user(mediaType: str):
 #     return {"username": mediaType}
 
-@router.get("/vlogs", tags=["media", "vlog"])
+@router.get("/vlogs", status_code=201, tags=["media", "vlog"])
 async def list_vlog():
     return vlogs
 
-@router.get("/blogs", tags=["media", "blogs"])
+@router.get("/blogs", status_code=201, tags=["media", "blogs"])
 async def list_blogs():
     return blogs

@@ -73,7 +73,6 @@ async def philospers(philo: Philosophers):
 
 @app.get('/philosophers/{name}')
 async def get_philosopher(name: int):
-    
     try:
         return Philo_list[name]
     except:
