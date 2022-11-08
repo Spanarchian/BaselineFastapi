@@ -11,7 +11,7 @@ eventlist = [{"eventTitle": "PyConUK"}, {"eventTitle": "DataScienceFestival"}]
 
 
 
-@router.get("/", status_code=201, tags=["events"])
+@router.get("/", status_code=200, tags=["events"])
 async def read_event():
     return eventlist
 
