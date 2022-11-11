@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from typing import Optional, List
 
 from .endpoints.event import router as eventrouter
-from .endpoints.media import router as mediarouter
+from .endpoints.blog import router as blogrouter
 from .endpoints.user import router as authrouter
 from .endpoints.auth import router as userrouter
 from .endpoints.philo import router as philorouter

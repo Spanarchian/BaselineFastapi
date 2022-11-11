@@ -2,7 +2,7 @@ from fastapi import APIRouter
 
 router = APIRouter(
     prefix="/blog",
-    tags=["blog", "media"],
+    tags=["blog"],
     # dependencies=[Depends(get_token_header)],
     responses={404: {"description": "Not found"}},
 )
@@ -14,15 +14,6 @@ blogs={
         "spanarchian":{'ref' : '71D543B5-6884-4FE4-AEF8-AD98D35A6B83', 'title' : 'spanarchian', 'creator' : 'spanarchian@gmail.com', 'type' : 'reader', 'desc' : 'Rydr', 'duration' : '1hr', 'level (All / Sub)' : 'sub', 'till' : 'End Nov'},
         "colin":{'ref' : '6F2B2369-6392-4B31-A238-EA65EDE57C65', 'title' : 'colin', 'creator' : 'colin.moore.hill@gmail.com', 'type' : 'subscriber', 'desc' : 'Vancouver', 'duration' : '1hr', 'level (All / Sub)' : 'all', 'till' : '-'}
     }
-
-# @router.get("/", status_code=200)
-# async def read_media():
-#     return [{"mediaType": "Video"}, {"mediaType": "blog"}]
-
-# @router.get("/{mediaType}", tags=["media"])
-# async def read_user(mediaType: str):
-#     return {"username": mediaType}
-
 
 @router.get("/", status_code=200)
 async def list_blogs():
