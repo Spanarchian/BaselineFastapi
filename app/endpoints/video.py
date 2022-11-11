@@ -1,8 +1,9 @@
 from fastapi import APIRouter
+from ..schemas.schema_video import Video
 
 router = APIRouter(
     prefix="/video",
-    tags=["video", "media"],
+    tags=["video"],
     # dependencies=[Depends(get_token_header)],
     responses={404: {"description": "Video Not Found"}},
 )
@@ -16,18 +17,6 @@ vlogs=[
 ]
 
 
-@router.get("/", status_code=200, tags=["video", "media"])
+@router.get("/", status_code=200, tags=["video"])
 async def read_media():
     return vlogs
-
-# @router.get("/{mediaType}", tags=["media"])
-# async def read_user(mediaType: str):
-#     return {"username": mediaType}
-
-@router.get("/vlogs", status_code=201, tags=["media", "vlog"])
-async def list_vlog():
-    return vlogs
-
-@router.get("/blogs", status_code=201, tags=["media", "blogs"])
-async def list_blogs():
-    return blogs
