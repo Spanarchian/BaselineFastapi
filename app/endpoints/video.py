@@ -1,5 +1,4 @@
 from fastapi import APIRouter
-# from ..schemas.schema_video import Video
 
 router = APIRouter(
     prefix="/video",
