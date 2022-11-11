@@ -5,6 +5,7 @@ from typing import Optional, List
 
 from .endpoints.event import router as eventrouter
 from .endpoints.blog import router as blogrouter
+from .endpoints.video import router as videorouter
 from .endpoints.user import router as authrouter
 from .endpoints.auth import router as userrouter
 from .endpoints.philo import router as philorouter
@@ -21,7 +22,8 @@ class Philosophers(BaseModel):
  
 app = FastAPI()
 app.include_router(eventrouter)
-app.include_router(mediarouter)
+app.include_router(blogrouter)
+app.include_router(videorouter)
 app.include_router(userrouter)
 app.include_router(authrouter)
 app.include_router(philorouter)
